@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <form onchange="onChange()">
+    <label for="colorBox">颜色</label>
+    <input id="colorBox" type="color" name="color" value="#0080ff" />
+
+    <label for="numBox">个数</label>
+    <input id="numBox" type="range" min="0" max="100" name="num" value="50" />
+
+    <button>刷新</button>
+  </form>
+
+  <canvas id="canvas"></canvas>
+
+
+  <script src="../dist/avatarx.min.js"></script>
+  <script>
+    const boxes = document.querySelectorAll('input');
+    const canvas = document.getElementById('canvas');
+
+    function onChange() {
+      init();
+    }
+
+    const init = () => {
+      const values = Array.from(boxes).map(box => box.value)
+      const options = {
+        color: values[0],
+        num: values[1],
+        seed: values[2],
+      }
+      new Avatarx(canvas, options);
+    }
+
+    init();
+  </script>
+</body>
+
+</html>

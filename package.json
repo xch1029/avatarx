@@ -1,0 +1,17 @@
+{
+  "name": "avatarx",
+  "version": "0.0.1",
+  "description": "generate a avatar like github",
+  "main": "./src/index.js",
+  "scripts": {
+    "buildUmd": "parcel build src/index.js --target browser --out-file avatarx.min.js --no-source-maps --experimental-scope-hoisting --global Avatarx",
+    "dev": "parcel ./examples/index.html --open",
+    "build": "parcel build src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
